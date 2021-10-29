@@ -1,0 +1,61 @@
+Chess Notation Converter
+FEN or "Forsyth-Edwards Notation." is a standard method for describing chess positions using
+simple text.
+The first thing you have to understand about FEN is that the board is broken into eight ranks. (A
+rank is a chess term for a row of eight squares running from left to right.) Each rank is converted
+into a string, then all eight of these strings are compacted together separated only by slashes
+(/).
+For example:
+1
+The adjoining image is the 7th rank of
+the diagram in the example above. From
+left to right, you see: two black pawns in
+FEN, that is pp, three empty spaces that
+is 3 in FEN, a black knight that is n (not
+"k" -- that's used for the king!), a white
+pawn that is P, and a black pawn that is
+p. Putting all this together, you get
+pp3nPp which represents the 7th rank.
+Given a FEN string as an input, the solution should output the board representation in a two line
+notation. The first line will contain information about the position of the black pieces and the
+second line will contain information about the white pieces.
+Output notation
+The output notation consists of 3 characters per chess piece:
+1. The first character is the column denoted by lowercase characters ‘a’ to ‘h’.
+2. The second character is the row number denoted by 1 to 8.
+3. The third character is the actual chess piece in lowercase.
+The FEN input should be processed top to bottom and left to right.
+Input Format:
+A single line representing the FEN input
+Output Format:
+Two lines with the first one containing information about the position of the black pieces and the
+second line containing information in the output notation.
+Note: All the output strings should be in lower case and should not contain any extra spaces or
+other characters
+2
+Sample #1:
+Input:
+7K/8/k1P5/7p/8/8/8/8
+Expected Output:
+a6kh5p
+h8kc6p
+Explanation:
+The image represents the sample input.
+● Black king piece is present at column ‘a’ and
+row 6. So, it is denoted as ‘a6k.’ Similarly,
+black pawn is present at column ‘h’ and row
+5. So, it is denoted as ‘h5p’. Since king is
+located higher and towards the left of the
+board compared to the pawn, the combined
+output is ‘a6kh5p’.
+● White king piece is present at column ‘h’ and row 8. So, it is denoted as ‘h8k’. Similarly,
+the second white piece is ‘c6p’. Since king is located higher than the pawn, the
+combined output is ‘h8kc6p’.
+Sample #2:
+Input :
+rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR
+Expected Output:
+a8rb8nc8bd8qe8kf8bg8nh8ra7pb7pc7pd7pe7pf7pg7ph7p
+a2pb2pc2pd2pe2pf2pg2ph2pa1rb1nc1bd1qe1kf1bg1nh1r
+Image representation sample input 2
+3
